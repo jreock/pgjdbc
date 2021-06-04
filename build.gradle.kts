@@ -64,6 +64,12 @@ val jacocoEnabled by extra {
     props.bool("coverage") || gradle.startParameter.taskNames.any { it.contains("jacoco") }
 }
 
+buildScan {
+    termsOfServiceUrl = "https://gradle.com/terms-of-service"
+    termsOfServiceAgree = "yes"
+    publishAlways()
+}
+
 ide {
     // TODO: set copyright to PostgreSQL Global Development Group
     // copyrightToAsf()
